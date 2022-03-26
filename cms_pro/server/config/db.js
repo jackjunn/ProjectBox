@@ -1,0 +1,1 @@
+exports.redisConfig = { host: '47.107.32.116', port: '6379', ttl: 5 * 60 * 1000 }
