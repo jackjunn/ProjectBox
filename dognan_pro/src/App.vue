@@ -2,7 +2,7 @@
   <div id="app">
     <canvas id="space" ref="space"></canvas>
     <div id="app2">
-       <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -103,19 +103,19 @@ export default {
 
 <style>
 #app2 {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: beige;
   margin-top: 0;
 }
-html,body{
+html,
+body {
   margin: 0;
 }
-#space{
+#space {
   position: absolute;
   z-index: -9;
 }
-
 </style>
