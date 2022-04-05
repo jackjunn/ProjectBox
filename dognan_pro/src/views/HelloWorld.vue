@@ -22,6 +22,7 @@
 
 <script>
 import WebsiteList from '../components/WebsiteList.vue'
+// import Cloudbase from '@cloudbase/vue-provider'
 export default {
   name: 'HelloWorld',
   components: {
@@ -35,15 +36,6 @@ export default {
     }
   },
   created () {
-    this.webSite1 = {
-      title: 'DEVTOOLS',
-      list: [
-        { dns: 'https://github.com/', name: 'GitHub' },
-        { dns: 'https://www.csdn.net/', name: 'CSDN' },
-        { dns: 'https://cloud.tencent.com/', name: '腾讯云' },
-        { dns: 'https://www.aliyun.com/', name: '阿里云' }
-      ]
-    }
     this.webSite2 = {
       title: 'DOCUMENTS',
       list: [
@@ -62,6 +54,21 @@ export default {
         { dns: 'https://www.youku.com/', name: '优酷网' },
         { dns: 'https://tv.cctv.com/live/cctv13', name: 'CCTV新闻频道' }
       ]
+    }
+  },
+  mounted () {
+    this.getData()
+  },
+  methods: {
+    getData () {
+      this.$cloudbase.auth({ persistence: 'local' }).anonymousAuthProvider().signIn()
+      this.$cloudbase.database().collection('dognan_data').where({}).get().then((res) => {
+        if (res) {
+          this.webSite1 = res.data[0].webSite0
+        } else {
+          console.log('数据库连接失败')
+        }
+      })
     }
   }
 }
