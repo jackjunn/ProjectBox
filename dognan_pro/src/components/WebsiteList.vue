@@ -23,18 +23,26 @@ export default {
 
 <style>
 h3 {
-  margin: 40px 0 0;
+  margin-top: 40px;
+  margin-bottom: 5px;
 }
 ul {
   list-style-type: none;
   padding: 0;
+  max-width: 900px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
 }
 li {
   display: inline-block;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
-a {
+li a {
   color: #42b983;
   text-decoration: none;
+  border: 1px solid #42b983;
+  border-radius: 5px;
+  padding: 5px;
 }
 </style>

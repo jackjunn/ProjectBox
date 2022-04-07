@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <canvas id="space" ref="space"></canvas>
+    <canvas id="space"
+            ref="space"></canvas>
     <div id="app2">
       <router-view />
     </div>
@@ -115,7 +116,7 @@ body {
   margin: 0;
 }
 #space {
-  position: absolute;
+  position: fixed;
   z-index: -9;
 }
 </style>

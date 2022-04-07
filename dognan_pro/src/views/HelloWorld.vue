@@ -9,7 +9,10 @@
              class="form-control"
              name=word>
       <button type="submit"
-              class="btn">Search</button>
+              class="btn">
+        <b-icon-search>
+        </b-icon-search>
+      </button>
     </form>
     <WebsiteList :title="webSite1.title"
                  :list="webSite1.list"></WebsiteList>
@@ -36,28 +39,10 @@ export default {
     }
   },
   created () {
-    this.webSite2 = {
-      title: 'DOCUMENTS',
-      list: [
-        { dns: 'https://cn.vuejs.org/index.html', name: 'VUE官网' },
-        { dns: 'https://www.bootcss.com/', name: 'Bootstrap中文网' },
-        { dns: 'http://v1.iviewui.com/', name: 'ViewUi' },
-        { dns: 'https://element.eleme.cn/#/zh-CN', name: 'ElementUi' }
-      ]
-    }
-    this.webSite3 = {
-      title: 'VIDEOS',
-      list: [
-        { dns: 'https://www.bilibili.com/', name: 'BILIBILI' },
-        { dns: 'https://www.iqiyi.com/', name: '爱奇艺' },
-        { dns: 'https://v.qq.com/', name: '腾讯视频' },
-        { dns: 'https://www.youku.com/', name: '优酷网' },
-        { dns: 'https://tv.cctv.com/live/cctv13', name: 'CCTV新闻频道' }
-      ]
-    }
+    this.getData()
   },
   mounted () {
-    this.getData()
+
   },
   methods: {
     getData () {
@@ -65,6 +50,8 @@ export default {
       this.$cloudbase.database().collection('dognan_data').where({}).get().then((res) => {
         if (res) {
           this.webSite1 = res.data[0].webSite0
+          this.webSite2 = res.data[0].webSite1
+          this.webSite3 = res.data[0].webSite2
         } else {
           console.log('数据库连接失败')
         }
