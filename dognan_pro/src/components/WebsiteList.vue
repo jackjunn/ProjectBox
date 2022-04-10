@@ -22,11 +22,11 @@ export default {
 </script>
 
 <style>
-h3 {
+#WebsiteList h3 {
   margin-top: 40px;
   margin-bottom: 5px;
 }
-ul {
+#WebsiteList ul {
   list-style-type: none;
   padding: 0;
   max-width: 900px;
@@ -34,15 +34,18 @@ ul {
   left: 50%;
   transform: translate(-50%);
 }
-li {
+#WebsiteList li {
   display: inline-block;
   margin: 10px 10px;
 }
-li a {
+#WebsiteList li a {
   color: #42b983;
   text-decoration: none;
   border: 1px solid #42b983;
   border-radius: 5px;
   padding: 5px;
+}
+#WebsiteList li a:hover {
+  color: #0d6efd;
 }
 </style>
