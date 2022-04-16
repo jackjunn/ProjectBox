@@ -19,9 +19,9 @@ export default {
   },
   data () {
     return {
-      webSite1: {},
-      webSite2: {},
-      webSite3: {}
+      webSite1: { title: '工具社区', list: [] },
+      webSite2: { title: '官方文档', list: [] },
+      webSite3: { title: '其它', list: [] }
     }
   },
   created () {
@@ -31,13 +31,11 @@ export default {
 
   },
   methods: {
-    getData () {
+    getData (webType, dateObj) {
       // 获取数据
-      this.$cloudbase.database().collection('dognan_data').where({}).get().then((res) => {
-        console.log('获取成功')
-        this.webSite1 = res.data[0].webSite0
-        this.webSite2 = res.data[0].webSite1
-        this.webSite3 = res.data[0].webSite2
+      this.$cloudbase.database().collection(webType).where({}).get().then((res) => {
+        console.log('获取数据成功')
+        dateObj.list = res.data
       }).catch((e) => { console.log('获取失败' + e) })
     },
     async login () {
@@ -47,7 +45,11 @@ export default {
         console.log('登录成功')
       }).catch((e) => { console.log('登录失败：' + e) })
       const loginState = await auth.getLoginState()
-      loginState !== null ? this.getData() : console.log('用户未登录' + loginState)
+      if (loginState !== null) {
+        this.getData('web_devtool', this.webSite1)
+        this.getData('web_document', this.webSite2)
+        this.getData('web_others', this.webSite3)
+      }
     }
   }
 }

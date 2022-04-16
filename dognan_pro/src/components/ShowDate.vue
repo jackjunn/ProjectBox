@@ -172,7 +172,7 @@ export default {
   background-color: #563d7c;
   box-shadow: 0 -0.15rem 0.25rem rgb(0 0 0 / 25%),
     inset 0 1px 5px rgb(0 0 0 / 25%);
-  color: beige;
+  color: #0d6efd;
   position: fixed;
   bottom: 0;
   left: 50%;
