@@ -1,11 +1,13 @@
 <template>
   <div id="WebMenu">
-    <WebsiteList :title="webSite1.title"
-                 :list="webSite1.list"></WebsiteList>
-    <WebsiteList :title="webSite2.title"
-                 :list="webSite2.list"></WebsiteList>
-    <WebsiteList :title="webSite3.title"
-                 :list="webSite3.list"></WebsiteList>
+    <WebsiteList :title="web_community.title"
+                 :list="web_community.list"></WebsiteList>
+    <WebsiteList :title="web_devtool.title"
+                 :list="web_devtool.list"></WebsiteList>
+    <WebsiteList :title="web_document.title"
+                 :list="web_document.list"></WebsiteList>
+    <WebsiteList :title="web_others.title"
+                 :list="web_others.list"></WebsiteList>
   </div>
 </template>
 
@@ -19,9 +21,10 @@ export default {
   },
   data () {
     return {
-      webSite1: { title: '工具社区', list: [] },
-      webSite2: { title: '官方文档', list: [] },
-      webSite3: { title: '其它', list: [] }
+      web_community: { title: '社区', list: [] },
+      web_devtool: { title: '工具', list: [] },
+      web_document: { title: '文档', list: [] },
+      web_others: { title: '其它', list: [] }
     }
   },
   created () {
@@ -46,9 +49,10 @@ export default {
       }).catch((e) => { console.log('登录失败：' + e) })
       const loginState = await auth.getLoginState()
       if (loginState !== null) {
-        this.getData('web_devtool', this.webSite1)
-        this.getData('web_document', this.webSite2)
-        this.getData('web_others', this.webSite3)
+        this.getData('web_community', this.web_community)
+        this.getData('web_devtool', this.web_devtool)
+        this.getData('web_document', this.web_document)
+        this.getData('web_others', this.web_others)
       }
     }
   }
