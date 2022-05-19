@@ -13,6 +13,7 @@
 
 <script>
 import WebsiteList from '../components/WebsiteList.vue'
+
 // import Cloudbase from '@cloudbase/vue-provider'
 export default {
   name: 'WebMenu',
@@ -29,9 +30,12 @@ export default {
   },
   created () {
     this.login()
+    this.$api.get('/home').then((res) => {
+      console.log(res)
+    })
   },
   mounted () {
-
+    console.log(process.env.NODE_ENV)
   },
   methods: {
     getData (webType, dateObj) {

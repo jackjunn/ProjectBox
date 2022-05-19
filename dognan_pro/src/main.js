@@ -7,6 +7,9 @@ import App from './App'
 import router from './router'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import Cloudbase from '@cloudbase/vue-provider'
+import api from './utils/api.js'
+
+Vue.prototype.$api = api
 
 Vue.use(Cloudbase, {
   env: 'dognan-1gxuq1k5eaee817b',
