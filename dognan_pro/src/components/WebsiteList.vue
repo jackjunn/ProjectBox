@@ -4,7 +4,7 @@
     <ul>
       <li v-for="item in list"
           :key="item.id">
-        <a :href="item.dns"
+        <a :href="item.url"
            target="_blank">{{item.name}}</a>
       </li>
     </ul>
@@ -39,7 +39,7 @@ export default {
   margin: 10px 10px;
 }
 #WebsiteList li a {
-  color: #42b983;
+  color: gray;
   text-decoration: none;
   border: 1px solid #42b983;
   border-radius: 5px;

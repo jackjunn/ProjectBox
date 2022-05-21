@@ -4,12 +4,15 @@ import WebMenu from '@/views/WebMenu'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
+const routes = [
     {
-      path: '/',
-      name: 'WebMenu',
-      component: WebMenu
+        path: '/',
+        name: 'WebMenu',
+        component: WebMenu
     }
-  ]
+]
+
+export default new Router({
+    mode: 'history',
+    routes
 })

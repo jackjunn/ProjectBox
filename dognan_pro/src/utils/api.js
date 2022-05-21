@@ -1,6 +1,6 @@
 const axios = require('axios')
 
-const baseUrl = process.env.NODE_ENV === 'development' ? '/api' : 'http://localhost:3000'
+const baseUrl = process.env.NODE_ENV === 'development' ? '/api' : ''
 
 const api = {}
 

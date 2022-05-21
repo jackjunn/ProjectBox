@@ -21,7 +21,7 @@
 }
 button.btn-link,
 input {
-  color: #42b983;
+  color: gray;
 }
 input {
   width: 300px;
