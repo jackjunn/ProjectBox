@@ -29,16 +29,27 @@ export default {
     }
   },
   created () {
-    this.login()
+    // this.login()
     this.$api.get('/home').then((res) => {
-      console.log(res)
+      this.web_community.list = res.filter(item => {
+        return item.type === 'zone'
+      })
+      this.web_devtool.list = res.filter(item => {
+        return item.type === 'tool'
+      })
+      this.web_document.list = res.filter(item => {
+        return item.type === 'doc'
+      })
+      this.web_others.list = res.filter(item => {
+        return item.type === 'other'
+      })
     })
   },
   mounted () {
     console.log(process.env.NODE_ENV)
   },
   methods: {
-    getData (webType, dateObj) {
+    /* getData (webType, dateObj) {
       // 获取数据
       this.$cloudbase.database().collection(webType).where({}).get().then((res) => {
         console.log('获取数据成功')
@@ -46,7 +57,7 @@ export default {
       }).catch((e) => { console.log('获取失败' + e) })
     },
     async login () {
-      // 匿名登录
+      // 匿名登录腾讯云数据库
       const auth = this.$cloudbase.auth({ persistence: 'local' })
       await auth.anonymousAuthProvider().signIn().then(() => {
         console.log('登录成功')
@@ -58,7 +69,7 @@ export default {
         this.getData('web_document', this.web_document)
         this.getData('web_others', this.web_others)
       }
-    }
+    } */
   }
 }
 </script>
