@@ -6,11 +6,11 @@
       <input type="text"
              name=word
              autocomplete="off">
-      <button type="submit"
-              class="btn btn-link">
+      <b-button type="submit"
+                variant="outline-primary">
         <b-icon-search>
         </b-icon-search>
-      </button>
+      </b-button>
     </form>
   </div>
 </template>
@@ -19,25 +19,20 @@
 #Search {
   padding-top: 20px;
 }
-button.btn-link,
-input {
-  color: gray;
-}
+
 input {
   width: 300px;
   display: inline-block;
   background: none;
   border: transparent;
-  border-bottom: 1px solid #0f996b;
+  border-bottom: 1px solid gray;
+  color: gray;
 }
 input:focus {
-  border-bottom: 2px solid #ced4da;
+  border-bottom: 2px solid #0f996b;
   outline: none;
 }
-button:focus {
-  outline: none;
-  box-shadow: none;
-}
+
 input:-webkit-autofill {
   box-shadow: 0 0 0 1000px inset !important;
   -webkit-text-fill-color: #42b983 !important;

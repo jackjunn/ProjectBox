@@ -1,6 +1,7 @@
 <template>
-  <div id="app">
-    <Nav></Nav>
+  <div id="app"
+       :style="themeColor">
+    <Nav @childFun="changeTheme"></Nav>
     <Search></Search>
     <router-view />
   </div>
@@ -14,6 +15,22 @@ export default {
   components: {
     Search,
     Nav
+  },
+  data () {
+    return {
+      themeColor: {
+        '--color': '#1a242d'
+      }
+    }
+  },
+  methods: {
+    changeTheme (val) {
+      if (val === 'moon') {
+        this.themeColor['--color'] = '#1a242d'
+      } else {
+        this.themeColor['--color'] = ''
+      }
+    }
   }
 }
 </script>
@@ -27,11 +44,24 @@ export default {
   color: gray;
   margin-top: 0;
   height: 100%;
+  background-color: var(--color);
 }
 html,
 body {
   margin: 0;
   height: 100%;
-  background-color: #1a242d;
+}
+
+.btn-outline-primary {
+  color: gray;
+}
+
+.btn {
+  border: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
 }
 </style>
