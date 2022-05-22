@@ -50,10 +50,6 @@ export default {
   float: left;
 }
 
-#Nav a {
-  color: gray;
-}
-
 #Nav button {
   float: right;
 }

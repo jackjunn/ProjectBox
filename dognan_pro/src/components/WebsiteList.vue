@@ -39,13 +39,9 @@ export default {
   margin: 10px 10px;
 }
 #WebsiteList li a {
-  color: gray;
   text-decoration: none;
   border: 1px solid #42b983;
   border-radius: 5px;
   padding: 5px;
-}
-#WebsiteList li a:hover {
-  color: #0d6efd;
 }
 </style>

@@ -64,4 +64,16 @@ body {
   outline: none;
   box-shadow: none;
 }
+
+.btn:hover {
+  background-color: #42b983;
+}
+
+#app a {
+  color: gray;
+}
+
+#app a:hover {
+  color: #42b983;
+}
 </style>
