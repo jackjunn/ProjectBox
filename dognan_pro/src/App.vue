@@ -43,13 +43,12 @@ export default {
   text-align: center;
   color: gray;
   margin-top: 0;
-  height: 100%;
+  min-height: 100vh;
   background-color: var(--color);
 }
-html,
+
 body {
   margin: 0;
-  height: 100%;
 }
 
 .btn-outline-primary {
